@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # makersbnb
 Landing/login page
 ┌──────────────────────────────────────────────────────────────────────────┐
@@ -204,3 +205,6 @@ MakersBnb flow chart:
 =======
 Makers team project. This project invloves a group of 6 brillent students working on a team project.
 >>>>>>> dev
+=======
+
+>>>>>>> d54d1080c3cf1ec5567510d981042f1d55b556b0
