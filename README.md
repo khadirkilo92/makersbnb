@@ -1,7 +1,4 @@
 # makersbnb
-<<<<<<< HEAD
-Makers team project
-
 Landing/login page
 ┌──────────────────────────────────────────────────────────────────────────┐
 │                                                                          │
