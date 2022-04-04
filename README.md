@@ -1,4 +1,5 @@
 # makersbnb
+<<<<<<< HEAD
 Makers team project
 
 Landing/login page
@@ -203,3 +204,6 @@ MakersBnb flow chart:
        │                  │       │                     │
        │                  │       │                     │
        └──────────────────┘       └─────────────────────┘
+=======
+Makers team project. This project invloves a group of 6 brillent students working on a team project.
+>>>>>>> dev
