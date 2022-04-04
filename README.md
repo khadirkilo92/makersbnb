@@ -1,5 +1,7 @@
 <<<<<<< HEAD
 # makersbnb
+
+Minimal viable product.
 Landing/login page
 ┌──────────────────────────────────────────────────────────────────────────┐
 │                                                                          │
