@@ -1,38 +1,4 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 # makersbnb
-
-Minimal viable product.
-Landing/login page
-┌──────────────────────────────────────────────────────────────────────────┐
-│                                                                          │
-│                         welcome to makersbnb                             │
-│                                                                          │
-│                                                                          │
-│                                                                          │
-│                                                                          │
-│                           login                                          │
-│                           ┌────────────────┐                             │
-│                   email:  │                │                             │
-│                           └────────────────┘                             │
-│                                                                          │
-│                           ┌────────────────┐                             │
-│                Password:  │                │                             │
-│                           └────────────────┘                             │
-│                                                                          │
-│                             ┌───────────┐                                │
-│                             │sign in    │                                │
-│                             └───────────┘                                │
-│                                                                          │
-│                             sign up link                                 │
-│                                                                          │
-│                                                                          │
-└──────────────────────────────────────────────────────────────────────────┘
->>>>>>> dev
-
-# makersbnD
-
 ## Installing locally
 
 ```ruby
@@ -52,3 +18,7 @@ or
 $ rackup config.ru
 ```
 
+## RPS Web Pages
+
+<img src="./images/makersbnb-mock-up.png">
+<img src="./images/makersbnb-mock-up-2.png">
