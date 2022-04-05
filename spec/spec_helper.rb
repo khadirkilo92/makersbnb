@@ -4,8 +4,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 
-ENV['ENVIRONMENT']
-ENV['RACK_ENV']
+ENV['ENVIRONMENT'] = 'test'
 
 Capybara.app = MakersBNB
 
@@ -13,7 +12,9 @@ RSpec.configure do |config|
   config.before(:each) do
     setup_test_database
   end
+end
 
+RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end

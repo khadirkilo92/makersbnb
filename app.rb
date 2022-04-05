@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'sinatra/flash'
+require_relative './database_connection_setup.rb'
 
 class MakersBNB < Sinatra::Base
   configure :development do
