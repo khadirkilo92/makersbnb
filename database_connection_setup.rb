@@ -1,7 +1,7 @@
 require_relative './lib/database_connection.rb'
-
+p "Reading ENVIRONMENT variable"
 if ENV['ENVIRONMENT'] == 'test'
   DatabaseConnection.setup('makersbnb_test')
 else
-  DatabaseConnection.setup('makersbnb_test')
+  DatabaseConnection.setup('makersbnb')
 end
