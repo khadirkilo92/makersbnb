@@ -1,0 +1,1 @@
+CREATE TABLE spaces(id SERIAL PRIMARY KEY, name VARCHAR(40), description VARCHAR(240), price_per_night FLOAT4);
