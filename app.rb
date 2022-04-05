@@ -17,9 +17,22 @@ class MakersBNB < Sinatra::Base
     "This is a test"
   end
 
+
   get '/spaces' do
     @space = Space.all
     erb :spaces
+  end
+
+  get '/new-space' do
+    erb :newspace  
+  end 
+
+  post '/new-space' do
+    DatabaseConnection.query(
+      "INSERT INTO spaces (name, description, price_per_night) VALUES ($1,$2,$3);",
+      [params[:name], params[:description], params[:price_per_night]]
+    )
+    redirect '/spaces'
   end
 
   run! if app_file == $0
