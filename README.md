@@ -20,16 +20,16 @@ $ rackup config.ru
 
 ## Postgres Install
 
-```
-brew install postgresql
+```ruby
+$ brew install postgresql
 
-brew services start postgresql
+$ brew services start postgresql
 
-psql postgres
+$ psql postgres
 ```
 ## Setup makersbnb and makersbnb_test Database
 
-```
+```sql
 psql
 
 CREATE DATABASE makersbnb;
@@ -51,6 +51,5 @@ CREATE TABLE spaces(id SERIAL PRIMARY KEY, name VARCHAR(40), description VARCHAR
 ## MakersBNB Model
 
 <img src="./images/makersbnb-mock-up.png">
-<img src="./images/makersbnb-mock-up-2.png">
 
 ## MakersBNB Web Pages
