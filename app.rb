@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'sinatra/flash'
+require './lib/space'
 require_relative './database_connection_setup.rb'
 
 class MakersBNB < Sinatra::Base
@@ -12,13 +13,18 @@ class MakersBNB < Sinatra::Base
 
   enable :sessions
 
-  get '/' do 
+  get '/' do
     "This is a test"
   end
 
+
+  get '/spaces' do
+    @space = Space.all
+    erb :spaces
+  end
+
   get '/new-space' do
-    erb :newspace
-    
+    erb :newspace  
   end 
 
   post '/new-space' do
@@ -26,8 +32,7 @@ class MakersBNB < Sinatra::Base
       "INSERT INTO spaces (name, description, price_per_night) VALUES ($1,$2,$3);",
       [params[:name], params[:description], params[:price_per_night]]
     )
-    redirect '/'
-
+    redirect '/spaces'
   end
 
   run! if app_file == $0
