@@ -1,10 +1,12 @@
+<h1>Logged in as <%= @username %></h1>
+
 <h1> Spaces Available. </h1>
     <% @space.each do |space| %>
-      <form action="/booking_preview/<%= space.id%>" method="get" >
-      <li class="space" id="<% space.id %>">
-      <li>  <%= space.name %> </li>
-      <li> <%= space.description %> </li>
-      <li> <%= space.price_per_night %> </li>
-      <input type="submit" value="Book now" name="Book Now" />
+ <form action="/booking_preview/<%= space.id%>" method="get" >
+  <li class="space" id="<% space.id %>">
+  <li>  <%= space.name %> </li>
+  <li> <%= space.description %> </li>
+  <li> <%= space.price_per_night %> </li>
+  <input type="submit" value="Book now" name="Book Now" />
 </form>
 <% end %>

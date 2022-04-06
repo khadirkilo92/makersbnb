@@ -4,6 +4,8 @@ require 'sinatra/flash'
 require './lib/space'
 require './lib/booking'
 require_relative './database_connection_setup.rb'
+require_relative './lib/user.rb'
+require_relative './lib/database_connection.rb'
 
 class MakersBNB < Sinatra::Base
   configure :development do
@@ -13,23 +15,53 @@ class MakersBNB < Sinatra::Base
   register Sinatra::Flash
 
   enable :sessions
-  
+
+  before do
+    if session["user"].nil?
+      if !%w[login user-auth signup new-user].include? request.path_info.split("/")[1]
+        redirect "/login"
+      end
+    end
+  end
+
   get '/' do
     erb :index
   end
 
-  get '/log_in' do 
+  get '/login' do
+    erb :login
+  end
+
+  post '/user-auth' do
+    p User.authenticate(params[:email], params[:password])
+    if User.authenticate(params[:email], params[:password])
+      session["user"] = params[:email]
+      redirect '/spaces'
+    else
+      redirect "/login"
+      # flash message
+    end
+  end
+
+  get '/signup' do
+    erb :signup
+  end
+
+  post '/new-user' do
+    User.add(params[:email], params[:password])
+    redirect '/login'
   end
 
   get '/spaces' do
+    @username = session["user"]
     @space = Space.all
     erb :spaces
 
   end
 
   get '/new-space' do
-    erb :newspace  
-  end 
+    erb :newspace
+  end
 
   post '/new-space' do
     DatabaseConnection.query(

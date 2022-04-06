@@ -1,5 +1,8 @@
+require_relative '../login_helper.rb'
+
 feature " new space" do
     scenario "user adds a new space " do
+      test_login
         visit ('/new-space')
         fill_in 'name', with: 'Makers Mansion'
         fill_in 'description', with: 'Great location for vacation'
@@ -16,4 +19,4 @@ feature " new space" do
         expect(result[0]['name']).to eq 'Makers Mansion'
 
     end
-end 
+end
