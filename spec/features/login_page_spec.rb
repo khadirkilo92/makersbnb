@@ -1,3 +1,5 @@
+require_relative '../login_helper.rb'
+
 feature 'login page' do
   it 'visits the login page' do
     visit '/login'
@@ -25,11 +27,7 @@ feature 'login page' do
   end
 
   it "logs in a user and takes them to the spaces page" do
-    connection = PG.connect(dbname: "makersbnb_test")
-    connection.exec_params(
-    "INSERT INTO users (email, password) VALUES ($1, $2);",
-    ["leigh@hotmail.com", "pa55word"]
-  )
+    add_test_user
     visit '/login'
     fill_in 'email', with: "leigh@hotmail.com"
     fill_in "password", with: "pa55word"
