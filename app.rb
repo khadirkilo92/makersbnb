@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require 'sinatra/flash'
 require './lib/space'
+require './lib/booking'
 require_relative './database_connection_setup.rb'
 
 class MakersBNB < Sinatra::Base
@@ -36,7 +37,7 @@ class MakersBNB < Sinatra::Base
   end
 
   post '/booking-confirmation' do
-    @space = Space.all
+    @booking = Booking.new(@space.name, @space.description, @space.price_per_night)
     erb :booking_confirmation
   end
 
