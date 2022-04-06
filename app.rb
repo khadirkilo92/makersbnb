@@ -3,6 +3,8 @@ require 'sinatra/reloader'
 require 'sinatra/flash'
 require './lib/space'
 require_relative './database_connection_setup.rb'
+require_relative './lib/user.rb'
+require_relative './lib/database_connection.rb'
 
 class MakersBNB < Sinatra::Base
   configure :development do
@@ -14,8 +16,11 @@ class MakersBNB < Sinatra::Base
   enable :sessions
 
   before do
-    pass if %w[login].include? request.path_info.split("/")[1] ||  !session["user"].nil?
-    redirect "/login"
+    if session["user"].nil?
+      if !%w[login user-auth].include? request.path_info.split("/")[1]
+        redirect "/login"
+      end
+    end
   end
 
   get '/' do
@@ -27,8 +32,10 @@ class MakersBNB < Sinatra::Base
   end
 
   post '/user-auth' do
+    p User.authenticate(params[:email], params[:password])
     if User.authenticate(params[:email], params[:password])
       session["user"] = params[:email]
+      redirect '/spaces'
     else
       redirect "/login"
       # flash message
