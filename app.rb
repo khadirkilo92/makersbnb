@@ -13,10 +13,27 @@ class MakersBNB < Sinatra::Base
 
   enable :sessions
 
+  before do
+    pass if %w[login].include? request.path_info.split("/")[1] ||  !session["user"].nil?
+    redirect "/login"
+  end
+
   get '/' do
     "This is a test"
   end
 
+  get '/login' do
+    erb :login
+  end
+
+  post '/user-auth' do
+    if User.authenticate(params[:email], params[:password])
+      session["user"] = params[:email]
+    else
+      redirect "/login"
+      # flash message
+    end
+  end
 
   get '/spaces' do
     @space = Space.all
@@ -24,8 +41,8 @@ class MakersBNB < Sinatra::Base
   end
 
   get '/new-space' do
-    erb :newspace  
-  end 
+    erb :newspace
+  end
 
   post '/new-space' do
     DatabaseConnection.query(
