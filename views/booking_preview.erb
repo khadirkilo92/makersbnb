@@ -1,8 +1,13 @@
 <h1> Booking Preview </h1>
-<form action="/booking_confirmation">
-<button type="submit"> Request Booking </button>
+<li> <%= @bookedspace.name %> </li>
+<li> <%= @bookedspace.description %> </li>
+<li> <%= @bookedspace.price_per_night %> </li>
+<form action="/booking_confirmation" method="get">
+<input type="submit" value="Request Booking" />
 </form>
 
-<form action="/spaces">
-<button type="submit"> Go Back </button>
+<form action="/spaces" method="get">
+  <input type="submit" value="Go Back" />
 </form>
+
+

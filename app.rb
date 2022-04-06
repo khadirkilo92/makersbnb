@@ -22,6 +22,7 @@ class MakersBNB < Sinatra::Base
   get '/spaces' do
     @space = Space.all
     erb :spaces
+
   end
 
   get '/new-space' do
@@ -36,11 +37,13 @@ class MakersBNB < Sinatra::Base
     redirect '/spaces'
   end
 
-  post '/booking_preview' do
-   
-    # @booking = Booking.new(@book.name, @book.description, @book.price_per_night)
-    erb :booking_preview
+  post '/booking_preview/:id' do
+    @bookedspace = Space.find(id: params[:id])
+    erb :"booking_preview"
   end
+
+  get '/booking_confirmation' do 
+  end 
 
   run! if app_file == $0
 end
