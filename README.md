@@ -53,3 +53,6 @@ CREATE TABLE spaces(id SERIAL PRIMARY KEY, name VARCHAR(40), description VARCHAR
 <img src="./images/makersbnb-mock-up.png">
 
 ## MakersBNB Web Pages
+
+
+## User Stories
