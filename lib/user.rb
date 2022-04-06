@@ -17,4 +17,10 @@ class User
   def self.match_password(correct_password, password_to_check)
     correct_password == password_to_check
   end
+
+  def self.add(email, password)
+    DatabaseConnection.query(
+      "INSERT INTO users (email, password) VALUES ($1, $2);", [email, password]
+    )
+  end
 end

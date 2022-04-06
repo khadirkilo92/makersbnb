@@ -17,7 +17,7 @@ class MakersBNB < Sinatra::Base
 
   before do
     if session["user"].nil?
-      if !%w[login user-auth].include? request.path_info.split("/")[1]
+      if !%w[login user-auth signup new-user].include? request.path_info.split("/")[1]
         redirect "/login"
       end
     end
@@ -42,7 +42,17 @@ class MakersBNB < Sinatra::Base
     end
   end
 
+  get '/signup' do
+    erb :signup
+  end
+
+  post '/new-user' do
+    User.add(params[:email], params[:password])
+    redirect '/login'
+  end
+
   get '/spaces' do
+    @username = session["user"]
     @space = Space.all
     erb :spaces
   end
