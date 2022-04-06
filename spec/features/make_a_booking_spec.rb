@@ -13,10 +13,11 @@ feature 'making a booking' do
 
     expect(page).to have_content("1 bed flat")
     
-    first('.space').click_button 'Book now'
+    first('.space')
+    click_button 'Book now'
 
     expect(page).to have_content "1 bed flat"
     expect(page).to have_content "abc"
-    expect(page).to have_content "£100"
+    expect(page).to have_content "100"
   end
 end

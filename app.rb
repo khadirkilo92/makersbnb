@@ -37,13 +37,13 @@ class MakersBNB < Sinatra::Base
     redirect '/spaces'
   end
 
-  post '/booking_preview/:id' do
+  get '/booking_preview/:id' do
     @bookedspace = Space.find(id: params[:id])
     erb :"booking_preview"
   end
-
-  get '/booking_confirmation' do 
-  end 
+  
+  get '/booking_confirmation' do
+  end
 
   run! if app_file == $0
 end
