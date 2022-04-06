@@ -35,5 +35,10 @@ class MakersBNB < Sinatra::Base
     redirect '/spaces'
   end
 
+  post '/booking-confirmation' do
+    @space = Space.all
+    erb :booking_confirmation
+  end
+
   run! if app_file == $0
 end
