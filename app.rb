@@ -12,11 +12,13 @@ class MakersBNB < Sinatra::Base
   register Sinatra::Flash
 
   enable :sessions
-
+  
   get '/' do
-    "This is a test"
+    erb :index
   end
 
+  get '/log_in' do 
+  end
 
   get '/spaces' do
     @space = Space.all
