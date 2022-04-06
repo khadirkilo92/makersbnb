@@ -37,7 +37,8 @@ class MakersBNB < Sinatra::Base
   end
 
   post '/booking-confirmation' do
-    @booking = Booking.new(@space.name, @space.description, @space.price_per_night)
+    @book = Space.all
+    @booking = Booking.new(@book.name, @book.description, @book.price_per_night)
     erb :booking_confirmation
   end
 

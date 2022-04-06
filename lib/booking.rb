@@ -11,4 +11,5 @@ class Booking
   #   Booking.new(name, description, price_per_night, total_price)
   # end
   end
+
 end
