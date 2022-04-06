@@ -19,4 +19,11 @@ class Space
       Space.new(id: space['id'], name: space['name'], description: space['description'], price_per_night: space['price_per_night'])
     end
   end
+
+  def self.find(id:)
+    result = DatabaseConnection.query(
+      "SELECT * FROM bookmarks WHERE id = $1", [id]
+    )
+    Space.new(id: result[0]['id'], name: result[0]['name'], description: result[0]['description'], price_per_night: result[0]['price_per_night'])
+end
 end
