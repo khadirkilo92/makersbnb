@@ -1,12 +1,12 @@
 <h1> Spaces Available. </h1>
 
-<form action="/booking-confirmation" method="post" >
+<form action="/booking_preview" method="post" >
   <ul>
     <% @space.each do |space| %>
       <li>  <%= space.name %> </li>
       <li> <%= space.description %> </li>
       <li> <%= space.price_per_night %> </li>
-      <button type="submit" value=<%=@space%>> Book now </button>
+      <button type="submit"> Book now </button>
    <% end %>
   </ul>
 </form>

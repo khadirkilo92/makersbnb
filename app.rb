@@ -36,10 +36,10 @@ class MakersBNB < Sinatra::Base
     redirect '/spaces'
   end
 
-  post '/booking-confirmation' do
-    @book = Space.all
-    @booking = Booking.new(@book.name, @book.description, @book.price_per_night)
-    erb :booking_confirmation
+  post '/booking_preview' do
+   
+    # @booking = Booking.new(@book.name, @book.description, @book.price_per_night)
+    erb :booking_preview
   end
 
   run! if app_file == $0
