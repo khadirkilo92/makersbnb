@@ -75,8 +75,8 @@ li span {
   border-radius: 20px;
   box-sizing: border-box;
   height: auto;
-  padding: 20px;
-  margin: 20px;
+  padding: 30px;
+  margin: 20px 0;
 }
 
 .list2 {
@@ -112,7 +112,7 @@ li span {
   }
 
 .button1:hover{
-  background-color:#fddb3a;
+  background-color:#FFCA03;
 }
 
 @media all and (max-width:30em) {
@@ -140,7 +140,7 @@ li span {
   }
 
 .button2:hover{
-  background-color:#fddb3a;
+  background-color:#FFCA03;
 }
 
 @media all and (max-width:30em) {
@@ -181,13 +181,13 @@ li span {
 }
 
 .navMenu a:hover {
-  color: #fddb3a;
+  color: #FFCA03;
 }
 
 .navMenu .dot {
   width: 6px;
   height: 6px;
-  background: #fddb3a;
+  background: #FFCA03;
   border-radius: 50%;
   opacity: 0;
   -webkit-transform: translateX(30px);
