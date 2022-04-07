@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -28,14 +29,25 @@
 </div>
 
 <form class="list1" action="/booking_confirmation" method="get">
-<input class="button2" type="submit" value="Request Booking" />
+  <input type="date" name="From Date" value="From Date" />
+  <input class="button2" type="submit" value="Request Booking" />
 </form>
 
-<form class="list1" action="/spaces" method="get">
+<form action="/calculate" method="post">
+  <input type="text" name="number_of_nights" value="<%= @duration %>" />
+  <input type="hidden" name="id" value="<%= @bookedspace.id %>" />
+  <input class="button2" type="submit" value="Calculate" />
+</form>
+
+<div class="totalprice">
+  <%= @duration.to_i * (@bookedspace.price_per_night).to_i %>
+</div>
+
+<form action="/spaces" method="get">
   <input class="button2" type="submit" value="Go Back" />
 </form>
-
 </body>
+
 <footer>
   By Blue Whales
 </footer>

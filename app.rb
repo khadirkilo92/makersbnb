@@ -73,7 +73,15 @@ class MakersBNB < Sinatra::Base
   get '/booking_preview/:id' do
     @username = session["user"]
     @bookedspace = Space.find(id: params[:id])
+    if params["duration"].nil? 
+      params["duration"] = 1 
+    end
+    @duration = params["duration"]
     erb :booking_preview
+  end
+
+  post '/calculate' do
+    redirect "/booking_preview/#{params[:id]}?duration=#{params["number_of_nights"]}"
   end
   
   get '/booking_confirmation' do

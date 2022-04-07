@@ -16,6 +16,8 @@
 <img src="./images/makersbnb.png">
 
     <% @space.each do |space| %>
+
+ <div class="item">
  <form class="list1" action="/booking_preview/<%= space.id%>" method="get" >
   <span class="space" id="<% space.id %>">
       <li value="name"> Name:
@@ -29,6 +31,7 @@
   </li>
   <input class="button1" type="submit" value="Book now" name="Book Now" />
 </form>
+</div>
 <% end %>
 
 </body>
