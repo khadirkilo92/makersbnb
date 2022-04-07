@@ -1,7 +1,7 @@
 require_relative '../login_helper.rb'
 
 feature 'return button' do
-  it 'returns the user to the spaces page' do
+  it 'returns the user from the preview page to the spaces page' do
     test_login
     result = DatabaseConnection.query("INSERT INTO spaces (name, description, price_per_night) VALUES($1, $2, $3);", ['1 bed flat', 'abc', "100"])
     visit '/spaces'
