@@ -10,16 +10,22 @@
 
 <body class="container">
 
-<h1>Logged in as <%= @username %></h1>
+<h2 class="nav-1">Logged in as <%= @username %></h2>
 
 <h1> Spaces Available. </h1>
     <% @space.each do |space| %>
- <form action="/booking_preview/<%= space.id%>" method="get" >
-  <li class="space" id="<% space.id %>">
-  <li>  <%= space.name %> </li>
-  <li> <%= space.description %> </li>
-  <li> <%= space.price_per_night %> </li>
-  <input type="submit" value="Book now" name="Book Now" />
+ <form class="list1" action="/booking_preview/<%= space.id%>" method="get" >
+  <span class="space" id="<% space.id %>">
+      <li value="name"> Name:
+  <span>  <%= space.name %> </span>
+  </li>
+  <li> Description:
+  <span> <%= space.description %> </span>
+  </li>
+  <li> Price Per Night:
+  <span> <%= space.price_per_night %> </span>
+  </li>
+  <input class="button1" type="submit" value="Book now" name="Book Now" />
 </form>
 <% end %>
 
