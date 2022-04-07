@@ -72,11 +72,15 @@ class MakersBNB < Sinatra::Base
   end
 
   get '/booking_preview/:id' do
-    @bookedspace = Space.find(id: params[:id])
+    @booking = Booking.create(@username, params[:id])
     erb :booking_preview
   end
   
   get '/booking_confirmation' do
+    DatabaseConnection.query(
+      "INSERT INTO bookings (user, name, description, price_per_night) VALUES ($1,$2,$3,$4);",
+      [@username, params[:name], params[:description], params[:price_per_night]]
+    )
     erb :booking_confirmation
   end
 
