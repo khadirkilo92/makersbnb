@@ -77,6 +77,7 @@ class MakersBNB < Sinatra::Base
   end
   
   get '/booking_confirmation' do
+    @username = session["user"]
     erb :booking_confirmation
   end
 
