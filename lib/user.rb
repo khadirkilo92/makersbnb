@@ -23,4 +23,8 @@ class User
       "INSERT INTO users (email, password) VALUES ($1, $2);", [email, password]
     )
   end
+
+  def self.valid_email(email)
+    email.match?("@")
+  end 
 end
