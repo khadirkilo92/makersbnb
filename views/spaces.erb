@@ -6,17 +6,17 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Pacifico&family=Satisfy&family=Zen+Kurenaido&display=swap"
     rel="stylesheet">
+    <link rel="icon" href="/images/favicon.ico" />
 </head>
 
 <body class="container">
 
+<img class="logo" src="./images/makersbnb-2.png">
+
 <h2 class="nav-1">Logged in as <%= @username %></h2>
 <h1> Spaces Available. </h1>
 
-<img src="./images/makersbnb.png">
-
     <% @space.each do |space| %>
-
  <div class="item">
  <form class="list1" action="/booking_preview/<%= space.id%>" method="get" >
   <span class="space" id="<% space.id %>">
@@ -35,6 +35,15 @@
 <% end %>
 
 </body>
+
+<nav class="navMenu">
+      <a href="/login">Home</a>
+      <a href="/spaces">Spaces</a>
+      <a href="/new-space">Add Space</a>
+      <a href="/booking_requests">Bookings</a>
+      <div class="dot"></div>
+</nav>
+
 <footer>
   By Blue Whales
 </footer>
