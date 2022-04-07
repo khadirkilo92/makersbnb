@@ -80,5 +80,9 @@ class MakersBNB < Sinatra::Base
     erb :booking_confirmation
   end
 
+  get '/your_account' do
+    erb :your_account
+  end
+
   run! if app_file == $0
 end
