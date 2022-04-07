@@ -33,13 +33,12 @@ class MakersBNB < Sinatra::Base
   end
 
   post '/user-auth' do
-    p User.authenticate(params[:email], params[:password])
     if User.authenticate(params[:email], params[:password])
       session["user"] = params[:email]
       redirect '/spaces'
     else
+      flash[:notice] = "The email or password you entered are incorrect"
       redirect "/login"
-      # flash message
     end
   end
 

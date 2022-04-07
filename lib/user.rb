@@ -3,7 +3,9 @@ require_relative './database_connection.rb'
 class User
 
   def self.authenticate(email, password)
-    self.match_password(fetch_password(email), password)
+    correct_password = fetch_password(email)
+    return false if correct_password.nil?
+    self.match_password(correct_password, password)
   end
 
   def self.fetch_password(email)
@@ -11,6 +13,7 @@ class User
     "SELECT password FROM users WHERE email = $1;", [email]
   )
     result.map {|i| {"password" => i["password"]}}
+    return if result.count == 0
     result[0]["password"]
   end
 
