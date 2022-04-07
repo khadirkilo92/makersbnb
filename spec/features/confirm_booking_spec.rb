@@ -7,5 +7,5 @@ feature 'shows the preview page' do
     visit '/spaces'
     click_button 'Book now'
     expect(page).to have_content 'Booking Preview'
-    end 
-end 
+  end 
+end

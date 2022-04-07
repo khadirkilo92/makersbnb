@@ -38,4 +38,4 @@ feature 'calendar on the preview page' do
     click_button 'Calculate'
     expect(first('.totalprice')).to have_content "900"
   end
-end 
+end
