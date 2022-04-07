@@ -34,4 +34,9 @@ feature 'login page' do
     click_button 'submit'
     expect(current_path).to eq '/spaces'
   end
+
+  it "has a checkbox to hide the password" do
+    visit '/login'
+    expect(page).to have_field "Show Password"
+  end 
 end
