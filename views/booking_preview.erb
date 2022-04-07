@@ -1,11 +1,19 @@
 <h1> Booking Preview </h1>
-<li> <%= @bookedspace.name %> </li>
-<li> <%= @bookedspace.description %> </li>
-<li> <%= @bookedspace.price_per_night %> </li>
+<ul>
+  <li> <%= @bookedspace.name %> </li>
+  <li> <%= @bookedspace.description %> </li>
+  <li> <%= @bookedspace.price_per_night %> </li>
+</ul>
+
 <form action="/booking_confirmation" method="get">
-<input type="date" name="From Date" value="From Date" />
-<input type="submit" value="Request Booking" />
+  <input type="date" name="From Date" value="From Date" />
+  <input type="text" name="Number of Nights" value="1" />
+  <input type="submit" value="Request Booking" />
 </form>
+
+<div class="totalprice">
+  300
+</div>
 
 <form action="/spaces" method="get">
   <input type="submit" value="Go Back" />
