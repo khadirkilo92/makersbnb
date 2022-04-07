@@ -1,5 +1,8 @@
+require_relative '../login_helper.rb'
+
 feature 'making a booking' do
   it 'books a room' do
+    test_login
     result = DatabaseConnection.query("INSERT INTO spaces (name, description, price_per_night) VALUES($1, $2, $3);", ['1 bed flat', 'abc', "100"])
     visit '/spaces'
     expect(page).to have_content("1 bed flat")
@@ -8,6 +11,7 @@ feature 'making a booking' do
   end
 
   it 'displays information for booking' do
+    test_login
     DatabaseConnection.query("INSERT INTO spaces (name, description, price_per_night) VALUES($1, $2, $3);", ['1 bed flat', 'abc', "100"])
     visit '/spaces'
 
