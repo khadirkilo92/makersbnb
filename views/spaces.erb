@@ -11,8 +11,10 @@
 <body class="container">
 
 <h2 class="nav-1">Logged in as <%= @username %></h2>
-
 <h1> Spaces Available. </h1>
+
+<img src="./images/makersbnb.png">
+
     <% @space.each do |space| %>
  <form class="list1" action="/booking_preview/<%= space.id%>" method="get" >
   <span class="space" id="<% space.id %>">

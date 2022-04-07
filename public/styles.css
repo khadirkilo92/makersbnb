@@ -42,7 +42,14 @@ li span {
   font-family: 'Amatic SC', cursive;
   font-size: 3rem;
   width: 100%;
-  margin: 10 auto;
+}
+
+.list2 {
+  display:block;
+  color: #F24A72;
+  font-family: 'Amatic SC', cursive;
+  font-size: 3rem;
+  margin-left: 40%;
 }
 
 .button1 {
