@@ -1,19 +1,42 @@
-<h1> Booking Preview </h1>
-<ul>
-  <li> <%= @bookedspace.name %> </li>
-  <li> <%= @bookedspace.description %> </li>
-  <li> <%= @bookedspace.price_per_night %> </li>
-</ul>
 
-<form action="/booking_confirmation" method="get">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>MakersBNB</title>
+  <link href="<%= src='/styles.css' %>" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Pacifico&family=Satisfy&family=Zen+Kurenaido&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="container">
+
+<h2 class="nav-1">Logged in as <%= @username %></h2>
+<h1> Booking Preview. </h1>
+
+<img src="./images/makersbnb.png">
+
+<div class="list2">
+<li value="name"> Name:
+  <span> <%= @bookedspace.name %> </span>
+</li>
+<li> Description:
+  <span> <%= @bookedspace.description %> </span>
+</li>
+<li> Price Per Night:
+  <span> <%= @bookedspace.price_per_night %> </span>
+</li>
+</div>
+
+<form class="list1" action="/booking_confirmation" method="get">
   <input type="date" name="From Date" value="From Date" />
-  <input type="submit" value="Request Booking" />
+  <input class="button2" type="submit" value="Request Booking" />
 </form>
 
 <form action="/calculate" method="post">
   <input type="text" name="number_of_nights" value="<%= @duration %>" />
   <input type="hidden" name="id" value="<%= @bookedspace.id %>" />
-  <input type="submit" value="Calculate" />
+  <input class="button2" type="submit" value="Calculate" />
 </form>
 
 <div class="totalprice">
@@ -21,5 +44,10 @@
 </div>
 
 <form action="/spaces" method="get">
-  <input type="submit" value="Go Back" />
+  <input class="button2" type="submit" value="Go Back" />
 </form>
+</body>
+
+<footer>
+  By Blue Whales
+</footer>

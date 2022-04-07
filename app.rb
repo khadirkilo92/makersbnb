@@ -56,7 +56,6 @@ class MakersBNB < Sinatra::Base
     @username = session["user"]
     @space = Space.all
     erb :spaces
-
   end
 
   get '/new-space' do
@@ -72,6 +71,7 @@ class MakersBNB < Sinatra::Base
   end
 
   get '/booking_preview/:id' do
+    @username = session["user"]
     @bookedspace = Space.find(id: params[:id])
     if params["duration"].nil? 
       params["duration"] = 1 
@@ -85,6 +85,7 @@ class MakersBNB < Sinatra::Base
   end
   
   get '/booking_confirmation' do
+    @username = session["user"]
     erb :booking_confirmation
   end
 
