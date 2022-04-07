@@ -3,7 +3,7 @@ require_relative '../login_helper.rb'
 feature 'login page' do
   it 'visits the login page' do
     visit '/login'
-    expect(page).to have_content 'Login'
+    expect(page).to have_content 'Welcome to MakersBNB'
   end
 
   it 'has username field' do
