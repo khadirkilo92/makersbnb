@@ -7,16 +7,19 @@
 
 <form action="/booking_confirmation" method="get">
   <input type="date" name="From Date" value="From Date" />
-  <input type="text" name="Number of Nights" value="1" />
   <input type="submit" value="Request Booking" />
 </form>
 
+<form action="/calculate" method="post">
+  <input type="text" name="number_of_nights" value="<%= @duration %>" />
+  <input type="hidden" name="id" value="<%= @bookedspace.id %>" />
+  <input type="submit" value="Calculate" />
+</form>
+
 <div class="totalprice">
-  300
+  <%= @duration.to_i * (@bookedspace.price_per_night).to_i %>
 </div>
 
 <form action="/spaces" method="get">
   <input type="submit" value="Go Back" />
 </form>
-
-

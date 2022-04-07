@@ -16,7 +16,7 @@ feature 'calendar on the preview page' do
     visit '/spaces'
     first('.item').click_button 'Book Now'
     expect(current_path.split('/')[1]).to eq 'booking_preview'
-    expect(page).to have_field 'Number of Nights'
+    expect(page).to have_field 'number_of_nights'
   end
 
   scenario 'calculating the default price' do
@@ -34,7 +34,8 @@ feature 'calendar on the preview page' do
     visit '/spaces'
     first('.item').click_button 'Book Now'
     expect(current_path.split('/')[1]).to eq 'booking_preview'
-    fill_in "Number of Nights", with: '3'
+    fill_in "number_of_nights", with: '3'
+    click_button 'Calculate'
     expect(first('.totalprice')).to have_content "900"
   end
 end 
