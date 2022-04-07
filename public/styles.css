@@ -108,6 +108,14 @@ li span {
   }
 }
 
+.totalprice {
+  margin: 30px;
+  font-family: 'Amatic SC', cursive;
+  text-shadow: 5px 0 #182a46;
+  font-size: 4rem;
+  color: #64ffda;
+}
+
 footer {
   margin-top: 20%;
   color: #EEEEEE;
