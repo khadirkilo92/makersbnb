@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -7,14 +6,15 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Pacifico&family=Satisfy&family=Zen+Kurenaido&display=swap"
     rel="stylesheet">
+  <link rel="icon" href="./images/favicon.ico" />
 </head>
 
 <body class="container">
 
-<h2 class="nav-1">Logged in as <%= @username %></h2>
-<h1> Booking Preview. </h1>
+<img class="logo" src="./images/makersbnb-2.png">
 
-<img src="./images/makersbnb.png">
+<h2 class="nav-1">Logged in as <%= @username %></h2>
+<h1>Booking Preview.</h1>
 
 <div class="list2">
 <li value="name"> Name:
@@ -23,25 +23,29 @@
 <li> Description:
   <span> <%= @bookedspace.description %> </span>
 </li>
-<li> Price Per Night:
+<li> Price Per Night (£):
   <span> <%= @bookedspace.price_per_night %> </span>
 </li>
 </div>
 
-<form class="list1" action="/booking_confirmation" method="get">
-  <input type="date" name="From Date" value="From Date" />
-  <input class="button2" type="submit" value="Request Booking" />
-</form>
-
-<form action="/calculate" method="post">
-  <input type="text" name="number_of_nights" value="<%= @duration %>" />
-  <input type="hidden" name="id" value="<%= @bookedspace.id %>" />
+<form class="list1" action="/calculate" method="post">
+<li> Number of Nights:
+  <input class="button2" type="text" name="number_of_nights" value="<%= @duration %>" />
+</li>
+  <input class="button2" type="hidden" name="id" value="<%= @bookedspace.id %>" />
   <input class="button2" type="submit" value="Calculate" />
 </form>
 
-<div class="totalprice">
+<div class="totalprice">£
   <%= @duration.to_i * (@bookedspace.price_per_night).to_i %>
 </div>
+
+<form class="list1" action="/booking_confirmation" method="get">
+<li> Stay Date:
+  <input class="button2" type="date" name="From Date" value="From Date" />
+</li>
+  <input class="button2" type="submit" value="Request Booking" />
+</form>
 
 <form action="/spaces" method="get">
   <input class="button2" type="submit" value="Go Back" />

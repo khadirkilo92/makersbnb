@@ -1,8 +1,25 @@
-Signup
-<form action="/new-user" method='post'>
-    Email:  <input type="text" name="email" />
-    Password:  <input type="text" name="password" />
-    <input type="submit" value="submit" />
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>MakersBNB</title>
+  <link href="<%= src='/styles.css' %>" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Pacifico&family=Satisfy&family=Zen+Kurenaido&display=swap"
+    rel="stylesheet">
+    <link rel="icon" href="/images/favicon.ico" />
+</head>
+
+<body class="container">
+
+<img class="logo" src="./images/makersbnb-2.png">
+
+<h1> Welcome to MakersBNB </h1>
+<h2 class="title"> SignUp </h2>
+
+<form class="list1" action="/new-user" method='post'>
+    Email:  <input class="button2" type="text" name="email" />
+    Password:  <input class="button2" type="text" name="password" />
+    <input class="button2" type="submit" value="submit" />
 </form>
 
 <p>

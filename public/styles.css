@@ -8,13 +8,42 @@ body {
   background-color: #0a192f;
 }
 
+.logo {
+  width: 10%;
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  padding-top: 10px;
+}
+
+img {
+  width: 10%;
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  padding-top: 10px;
+}
+
 h1 {
+  margin: 20px;
+  font-family: 'Amatic SC', cursive;
+  text-shadow: 5px 0 #182a46;
+  text-align: center;
+  font-size:7rem;
+  color: #64ffda;
+}
+
+.title {
   margin: 30px;
   font-family: 'Amatic SC', cursive;
   text-shadow: 5px 0 #182a46;
   text-align: center;
-  font-size: 7rem;
+  font-size: 4rem;
   color: #64ffda;
+}
+
+.title2 {
+  font-size: 4rem;
 }
 
 .nav-1 {
@@ -42,14 +71,27 @@ li span {
   font-family: 'Amatic SC', cursive;
   font-size: 3rem;
   width: 100%;
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: auto;
+  padding: 20px;
+  margin: 20px;
 }
 
 .list2 {
-  display:block;
+  display:inli;
   color: #F24A72;
   font-family: 'Amatic SC', cursive;
   font-size: 3rem;
   margin-left: 40%;
+}
+
+.list3 li {
+  display:inline-block;
+  color: #F24A72;
+  font-family: 'Amatic SC', cursive;
+  font-size: 3rem;
 }
 
 .button1 {
@@ -70,7 +112,7 @@ li span {
   }
 
 .button1:hover{
-  background-color:#FFCC29;
+  background-color:#fddb3a;
 }
 
 @media all and (max-width:30em) {
@@ -98,7 +140,7 @@ li span {
   }
 
 .button2:hover{
-  background-color:#FFCC29;
+  background-color:#fddb3a;
 }
 
 @media all and (max-width:30em) {
@@ -108,10 +150,130 @@ li span {
   }
 }
 
+.totalprice {
+  margin: 30px;
+  font-family: 'Amatic SC', cursive;
+  text-shadow: 5px 0 #182a46;
+  font-size: 4rem;
+  color: #64ffda;
+}
+
+.navMenu {
+  position: absolute;
+  left: 40%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: 'Amatic SC', cursive;
+  margin: 10%;
+  padding-bottom: 5%;
+}
+
+.navMenu a {
+  color: #f6f4e6;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  width: 80px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:hover {
+  color: #fddb3a;
+}
+
+.navMenu .dot {
+  width: 6px;
+  height: 6px;
+  background: #fddb3a;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:nth-child(1):hover ~ .dot {
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(2):hover ~ .dot {
+  -webkit-transform: translateX(110px);
+  transform: translateX(110px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(3):hover ~ .dot {
+  -webkit-transform: translateX(200px);
+  transform: translateX(200px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(4):hover ~ .dot {
+  -webkit-transform: translateX(285px);
+  transform: translateX(285px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.fling-minislide {
+  width:1000px;
+  height:500px;
+  overflow:hidden;
+  position:relative;
+  margin:0 auto;
+}
+.fling-minislide img {
+  position:absolute;
+  animation:fling-minislide 20s infinite;
+  opacity:0;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
+.fling-minislide img:nth-child(6) {
+  animation-delay:0s;
+}
+.fling-minislide img:nth-child(5) {
+  animation-delay:3s;
+}
+.fling-minislide img:nth-child(4) {
+  animation-delay:5s;
+}
+.fling-minislide img:nth-child(3) {
+  animation-delay:3s;
+}
+.fling-minislide img:nth-child(2) {
+  animation-delay:5s;
+}
+.fling-minislide img:nth-child(1) {
+  animation-delay:3s;
+}
+.fling-minislide img:nth-child(0) {
+  animation-delay:5s;
+}
+
 footer {
-  margin-top: 20%;
+  margin-top: 10%;
   color: #EEEEEE;
   text-align: center;
   font-size: 2rem;
   font-family: 'Amatic SC', cursive;
+}
+
+.nav2 {
+  margin-top: 10%;
 }
