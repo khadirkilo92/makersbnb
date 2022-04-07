@@ -15,3 +15,7 @@ def test_login
   fill_in "password", with: "pa55word"
   click_button 'submit'
 end
+
+def add_test_space
+  Space.create(name: 'Makers Mansion', description: 'A decent mansion', price_per_night: '300')
+end 
