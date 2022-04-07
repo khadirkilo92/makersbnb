@@ -34,4 +34,13 @@ feature 'signup page' do
     expect(result[0]["email"]).to eq "leigh@hotmail.com"
     expect(result[0]["password"]).to eq "pa55word"
   end
+
+  it 'rejects invalid email address' do
+    visit '/signup'
+    fill_in 'email', with: "leighhotmail.com"
+    fill_in "password", with: "pa55word"
+    click_button "submit"
+    expect(current_path).to eq '/signup'
+    expect(page).to have_content 'Please enter a valid email address'
+  end
 end

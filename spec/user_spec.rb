@@ -43,4 +43,12 @@ RSpec.describe User do
     User.add("leigh@hotmail.com", "goodbye")
     expect(User.fetch_password("leigh@hotmail.com")).to eq "goodbye"
   end
+
+  it 'validates the correct email' do
+    expect(User.valid_email("leigh@hotmail.com")).to eq true
+  end
+
+  it 'invalidates the incorrect email' do 
+    expect(User.valid_email("leighhotmail.com")).to eq false
+  end
 end

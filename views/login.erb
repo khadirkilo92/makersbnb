@@ -16,9 +16,30 @@
 
 <form class="list1" action="/user-auth" method='post'>
     Email:  <input class="button2" type="text" name="email" />
-    Password:  <input class="button2" type="text" name="password" />
+    Password:  <input class="button2" type="password" name="password" id="password" />
     <input class="button2" type="submit" value="submit" />
 </form>
+
+<p>
+  <%= flash[:notice] %>
+</p>
+
+<input type="checkbox" name="Show Password" onclick="myFunction()">Show Password
+
+<p>
+  <a href="/signup">Not a member? Click here to sign up!</a>
+</p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
 
 </body>
 <footer>
