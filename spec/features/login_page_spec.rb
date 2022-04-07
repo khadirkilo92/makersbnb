@@ -39,4 +39,9 @@ feature 'login page' do
     visit '/login'
     expect(page).to have_field "Show Password"
   end 
+
+  it "has a link to the sign up page" do 
+    visit '/login'
+    expect(page).to have_link("Not a member? Click here to sign up!", href: '/signup') 
+  end
 end
