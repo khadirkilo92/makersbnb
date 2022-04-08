@@ -70,7 +70,7 @@ Metrics/AbcSize:
     - '**/test/**/*'
 
 Metrics/ClassLength:
-  Enabled: true
+  Enabled: false
   Exclude:
   - '**/spec/**/*'
   - '**/test/**/*'
@@ -132,7 +132,7 @@ Bundler/InsecureProtocolSource:
 Layout/BlockAlignment:
   Enabled: true
 Layout/BlockEndNewline:
-  Enabled: true
+  Enabled: false
 Layout/ConditionPosition:
   Enabled: true
 Layout/DefEndAlignment:
@@ -454,7 +454,7 @@ Style/SelfAssignment:
 Style/SymbolLiteral:
   Enabled: true
 Style/BlockDelimiters:
-  Enabled: true
+  Enabled: false
   Exclude: # `let` blocks are commonly multiline in tests
     - '**/spec/**/*'
     - '**/test/**/*'
