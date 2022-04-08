@@ -68,6 +68,9 @@ CREATE TABLE bookings (id SERIAL PRIMARY KEY, username VARCHAR(120), name VARCHA
 <img src="./public/images/page4.png">
 <img src="./public/images/page5.png">
 <img src="./public/images/page6.png">
+<img src="./public/images/page7.png">
+<img src="./public/images/page8.png">
+<img src="./public/images/page9.png">
 
 ## User Stories
 ```
