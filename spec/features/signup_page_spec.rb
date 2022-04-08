@@ -32,7 +32,6 @@ feature 'signup page' do
     )
     result.map { |i| {"id" => i['id'], "email" => i['email'], "password" => i['password']} }
     expect(result[0]["email"]).to eq "leigh@hotmail.com"
-    expect(result[0]["password"]).to eq "pa55word"
   end
 
   it 'rejects invalid email address' do
