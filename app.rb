@@ -49,6 +49,7 @@ class MakersBNB < Sinatra::Base
   post '/new-user' do
     if User.valid_email(params["email"])
       User.add(params["email"], params["password"])
+      flash[:notice] = 'Sign up successful'
       redirect '/login'
     else 
       flash[:notice] = "Please enter a valid email address"

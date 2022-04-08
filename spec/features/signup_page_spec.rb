@@ -32,7 +32,6 @@ feature 'signup page' do
     )
     result.map { |i| {"id" => i['id'], "email" => i['email'], "password" => i['password']} }
     expect(result[0]["email"]).to eq "leigh@hotmail.com"
-    expect(result[0]["password"]).to eq "pa55word"
   end
 
   it 'rejects invalid email address' do
@@ -42,5 +41,19 @@ feature 'signup page' do
     click_button "submit"
     expect(current_path).to eq '/signup'
     expect(page).to have_content 'Please enter a valid email address'
+  end
+
+  it "has a checkbox to hide the password" do
+    visit '/signup'
+    expect(page).to have_field "Show Password"
+  end 
+
+  it "confirms signup successful" do
+    visit '/signup'
+    fill_in 'email', with: "leigh@hotmail.com"
+    fill_in "password", with: "pa55word"
+    click_button "submit"
+    expect(current_path).to eq '/login'
+    expect(page).to have_content 'Sign up successful'
   end
 end
