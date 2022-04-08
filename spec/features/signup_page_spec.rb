@@ -48,4 +48,13 @@ feature 'signup page' do
     visit '/signup'
     expect(page).to have_field "Show Password"
   end 
+
+  it "confirms signup successful" do
+    visit '/signup'
+    fill_in 'email', with: "leigh@hotmail.com"
+    fill_in "password", with: "pa55word"
+    click_button "submit"
+    expect(current_path).to eq '/login'
+    expect(page).to have_content 'Sign up successful'
+  end
 end
