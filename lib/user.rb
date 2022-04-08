@@ -24,12 +24,8 @@ class User
 
   def self.add(email, password)
     DatabaseConnection.query(
-      "INSERT INTO users (email, password) VALUES ($1, $2);", [email, encrypt_password(password)]
+      "INSERT INTO users (email, password) VALUES ($1, $2);", [email, password]
     )
-  end
-
-  def self.encrypt_password(password)
-    BCrypt::Password.create(password)
   end
 
   def self.valid_email(email)
