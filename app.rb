@@ -102,8 +102,15 @@ class MakersBNB < Sinatra::Base
 
   get '/account' do
     @bookings = DatabaseConnection.query(
-      "SELECT * FROM bookings (name, description, price_per_night) WHERE username = @username"
-    )
+      "SELECT * FROM bookings WHERE username = $1;",
+      [session["user"]]
+    ).map { |booking| { "id" => booking["id"],
+                        "username" => booking["username"],
+                        "name" => booking["name"],
+                        "description" => booking["description"],
+                        "price_per_night" => booking["price_per_night"],
+                        "space_id" => booking["space_id"]
+                        } }
     erb :account
   end
 

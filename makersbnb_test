@@ -1,0 +1,141 @@
+CREATE DATABASE "DanielTaplin"
+\l
+\q
+CREATE DATABASE "daniel.taplin";
+CREATE DATABASE "bookmark_manager";
+psql
+\q
+\q
+\l
+\c bookmark_manager;
+\dt
+CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
+\dt
+/dt
+\dt
+SELECT * FROM bookmarks;
+SELECT * FROM bookmarks;
+\dt
+SELECT * FROM bookmarks;
+INSERT INTO bookmarks VALUES(1, "https://www.evilresource.com/");
+\dt
+SELECT * FROM bookmarks;
+INSERT INTO bookmarks VALUES(1, 'https://www.evilresource.com/');
+SELECT * FROM bookmarks;
+INSERT INTO bookmarks VALUES(1, 'https://www.evilresource.com/');
+INSERT INTO bookmarks (url) VALUES ('https://www.youtube.com/channel/UCTjnCCcuIbrprhOiaDJxxHA')
+INSERT INTO bookmarks (url) VALUES ('https://www.andertons.co.uk/')
+SELECT * FROM bookmarks;
+SELECT * FROM bookmarks;
+INSERT INTO bookmarks VALUES ('https://www.andertons.co.uk/')
+SELECT * FROM bookmarks;
+INSERT INTO bookmarks VALUES ('https://www.andertons.co.uk/');
+INSERT INTO bookmarks (url) VALUES ('https://www.andertons.co.uk/');
+\dt
+SELECT * FROM bookmarks;
+INSERT INTO bookmarks (url) VALUES ('https://www.andertons.co.uk/');
+SELECT * FROM bookmarks;
+INSERT INTO bookmarks (url) VALUES ('https://www.youtube.com/channel/UCTjnCCcuIbrprhOiaDJxxHA');
+SELECT * FROM bookmarks LIMIT 2;
+SELECT VALUES FROM bookmarks WHERE url = 'https://www.youtube.com/channel/UCTjnCCcuIbrprhOiaDJxxHA';
+SELECT url FROM bookmarks WHERE id = 1;
+DELETE FROM bookmarks WHERE id - 2;
+DELETE FROM bookmarks WHERE id = 2;
+SELECT * FROM bookmarks;
+UPDATE bookmarks SET url = 'https://www.andertons.co.uk/' WHERE url = 'https://www.youtube.com/channel/UCTjnCCcuIbrprhOiaDJxxHA' 
+SELECT * FROM bookmarks;
+UPDATE bookmarks SET url = 'https://www.andertons.co.uk/' WHERE url = 'https://www.youtube.com/channel/UCTjnCCcuIbrprhOiaDJxxHA';
+SELECT * FROM bookmarks;
+UPDATE bookmarks SET id = 2 WHERE id = 3;
+SELECT * FROM bookmarks;
+\q
+\q
+\dt
+\l
+\c bookmark_manager
+\dt
+SELECT * FROM bookmarks;
+\q
+CREATE DATABASE "bookmark_manager_test";
+CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
+\q
+\c bookmark_manager
+\dt
+SELECT * FROM bookmarks;
+UPDATE bookmarks SET title = 'Evil Resource' WHERE id = '1';
+SELECT * FROM bookmarks;
+UPDATE bookmarks SET title = 'Andertons' WHERE id = 2;
+\c bookmark_manager
+UPDATE bookmarks SET title = 'Infallible Code' WHERE id = 3;
+UPDATE bookmarks SET title = 'PMT' WHERE id = 4;
+SELECT * FROM bookmarks
+;
+\q
+\l
+\c bookmark_manager
+\dt
+SELEECT * FROM bookmarks;
+SELECT * FROM bookmarks;
+\q
+\c bookmark_manager
+CREATE TABLE comments(id SERIAL PRIMARY KEY, text VARCHAR(240), bookmark_id INTEGER REFERENCES bookmarks(id))
+\q
+\c bookmark_manager
+dtb
+\dtb
+CREATE TABLE comments(id SERIAL PRIMARY KEY, text VARCHAR(240), bookmark_id INTEGER REFERENCES bookmark(id));
+CREATE TABLE comments(id SERIAL PRIMARY KEY, text VARCHAR(240), bookmark_id INTEGER REFERENCES bookmark(id));
+CREATE TABLE comments(id SERIAL PRIMARY KEY, text VARCHAR(240), bookmark_id INTEGER REFERENCES bookmarks(id));
+\q
+\c bookmark_manager_test
+CREATE TABLE comments(id SERIAL PRIMARY KEY, text VARCHAR(240), bookmark_id INTEGER REFERENCES bookmark(id));
+CREATE TABLE comments(id SERIAL PRIMARY KEY, text VARCHAR(240), bookmark_id INTEGER REFERENCES bookmarks(id));
+\q
+\c bookmark_manager_test
+CREATE TABLE comments(id SERIAL PRIMARY KEY, text VARCHAR(240), bookmark_id INTEGER REFERENCES bookmarks(id));
+\q
+\c chitter
+CREATE TABLE peeps(id SERIAL PRIMARY KEY, text VARCHAR(140), date_time TIMESTAMP);
+\c chitter_test
+CREATE TABLE peeps(id SERIAL PRIMARY KEY, text VARCHAR(140), date_time TIMESTAMP);
+\q
+\c chitter
+ALTER TABLE peeps ADD COLUMN username VARCHAR(40);
+\c chitter_test
+ALTER TABLE peeps ADD COLUMN username VARCHAR(40);
+\q
+CREATE DATABASE makersbnb;
+\c makersbnb
+CREATE TABLE spaces(id SERIAL PRIMARY KEY, name VARCHAR(40), description VARCHAR(240), price_per_night FLOAT4);
+\q
+CREATE DATABASE makersbnb_test;
+\c makersbnb_test
+CREATE TABLE spaces(id SERIAL PRIMARY KEY, name VARCHAR(40), description VARCHAR(240), price_per_night FLOAT4);
+\q
+\c makersbnb
+CREATE TABLE users (id SERIAL PRIMARY KEY, email VARCHAR(120), password VARCHAR(240));
+\c makersbnb_test
+CREATE TABLE users (id SERIAL PRIMARY KEY, email VARCHAR(120), password VARCHAR(240));
+\q
+CREATE DATABASE calaveras;
+\c calaveras
+\q
+CREATE DATABASE calaveras_test;
+\q
+\c calaveras
+CREATE TABLE tracks(id SERIAL PRIMARY KEY, name VARCHAR(120));
+\c calaveras_test
+CREATE TABLE tracks(id SERIAL PRIMARY KEY, name VARCHAR(120));
+\q
+\c calaveras_test
+CREATE TABLE tracks(id SERIAL PRIMARY KEY, u VARCHAR(40), a VARCHAR(40));
+CREATE TABLE users(id SERIAL PRIMARY KEY, u VARCHAR(40), a VARCHAR(40));
+\c calaveras
+CREATE TABLE users(id SERIAL PRIMARY KEY, u VARCHAR(40), a VARCHAR(40));
+\q
+\c makersbnb
+CREATE TABLE bookings (id SERIAL PRIMARY KEY, username VARCHAR(60), description VARCHAR(120), price_per_night INT4, space_id INT2);
+\c makersbnb_test
+CREATE TABLE bookings (id SERIAL PRIMARY KEY, username VARCHAR(60), description VARCHAR(120), price_per_night INT4, space_id INT2);
+\q
+\s makersbnb_test
