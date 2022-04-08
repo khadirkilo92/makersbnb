@@ -52,7 +52,7 @@ CREATE TABLE spaces(id SERIAL PRIMARY KEY, name VARCHAR(40), description VARCHAR
 
 CREATE TABLE users (id SERIAL PRIMARY KEY, email VARCHAR(120), password VARCHAR(240));
 
-CREATE TABLE bookings (id SERIAL PRIMARY KEY, username VARCHAR(120), name VARCHAR(240), description VARCHAR(240), price_per_night VARCHAR(60), space_id INT;);
+CREATE TABLE bookings (id SERIAL PRIMARY KEY, username VARCHAR(120), name VARCHAR(240), description VARCHAR(240), price_per_night VARCHAR(60), space_id INT);
 
 ```
 
