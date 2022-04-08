@@ -78,8 +78,8 @@ class MakersBNB < Sinatra::Base
 
   get '/booking_preview/:id' do
     @username = session["user"]
-    # @bookedspace = Space.find(id: params[:id])
-    @booking = Booking.create(@username, :id)
+    @booking = Space.find(id: params[:id])
+    # @booking = Booking.create(username: @username, space_id: params[:id])
     if params["duration"].nil? 
       params["duration"] = 1 
     end

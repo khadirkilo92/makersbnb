@@ -1,5 +1,5 @@
 class Booking
-  attr_reader :username, :id, :name, :description, :total_price
+  attr_reader :username, :id, :name, :description, :total_price, :price_per_night
 
   def initialize(username:, name:, description:, price_per_night:)
       @username = username
