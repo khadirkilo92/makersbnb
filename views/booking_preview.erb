@@ -1,7 +1,7 @@
 <h1> Booking Preview </h1>
-<li> <%= @bookedspace.name %> </li>
-<li> <%= @bookedspace.description %> </li>
-<li> <%= @bookedspace.price_per_night %> </li>
+<li> <%= @booking.name %> </li>
+<li> <%= @booking.description %> </li>
+<li> <%= @booking.price_per_night %> </li>
 <form action="/booking_confirmation" method="get">
 <input type="submit" value="Request Booking" />
 </form>

@@ -72,7 +72,7 @@ class MakersBNB < Sinatra::Base
   end
 
   get '/booking_preview/:id' do
-    @booking = Booking.create(@username, params[:id])
+    @booking = Booking.create(@username, :id)
     erb :booking_preview
   end
   
@@ -84,8 +84,11 @@ class MakersBNB < Sinatra::Base
     erb :booking_confirmation
   end
 
-  get '/your_account' do
-    erb :your_account
+  get '/account' do
+    @bookings = DatabaseConnection.query(
+      "SELECT * FROM bookings (name, description, price_per_night) WHERE username = @username"
+    )
+    erb :account
   end
 
   run! if app_file == $0
