@@ -18,9 +18,21 @@
 
 <form class="list1" action="/new-user" method='post'>
     Email:  <input class="button2" type="text" name="email" />
-    Password:  <input class="button2" type="text" name="password" />
+    Password:  <input class="button2" type="password" name="password" id="password" required />
+    <input class="button2" type="button" value="👁" name="Show Password" onclick="myFunction()">
     <input class="button2" type="submit" value="submit" />
 </form>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
 
 <p class="title">
     <%= flash[:notice] %>

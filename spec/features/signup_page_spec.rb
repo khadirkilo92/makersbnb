@@ -43,4 +43,9 @@ feature 'signup page' do
     expect(current_path).to eq '/signup'
     expect(page).to have_content 'Please enter a valid email address'
   end
+
+  it "has a checkbox to hide the password" do
+    visit '/signup'
+    expect(page).to have_field "Show Password"
+  end 
 end
