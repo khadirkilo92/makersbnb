@@ -122,5 +122,10 @@ class MakersBNB < Sinatra::Base
     redirect '/contact_confirmation'
   end
 
+  get '/bookings' do
+    @username = session["user"]
+    erb :bookings
+  end
+
   run! if app_file == $0
 end
