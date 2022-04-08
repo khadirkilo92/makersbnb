@@ -21,5 +21,4 @@ class Booking
 
     Booking.new(username: result[0]['username'], name: result[0]['name'], description: result[0]['description'], price_per_night: result[0]['price_per_night'])
   end
-
 end

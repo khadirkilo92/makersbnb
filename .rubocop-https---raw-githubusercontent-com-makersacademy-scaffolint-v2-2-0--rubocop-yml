@@ -64,7 +64,7 @@ Metrics/BlockLength:
     - '**/test/**/*'
 
 Metrics/AbcSize:
-  Enabled: true
+  Enabled: false
   Exclude:
     - '**/spec/**/*'
     - '**/test/**/*'
