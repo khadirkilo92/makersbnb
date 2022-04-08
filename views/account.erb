@@ -1,0 +1,7 @@
+<h1> Your Bookings <h1>
+
+<% @bookings.each do |booking| %>
+  <%= booking.name %>
+  <%= booking.description %>
+  <%= booking.price_per_night%>
+<% end %>

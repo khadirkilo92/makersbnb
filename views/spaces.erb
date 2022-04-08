@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>MakersBNB</title>
+  <link href="<%= src='/styles.css' %>" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Pacifico&family=Satisfy&family=Zen+Kurenaido&display=swap"
+    rel="stylesheet">
+    <link rel="icon" href="/images/favicon.ico" />
+</head>
+
+<body class="container">
+
+<img class="logo" src="./images/makersbnb-2.png">
+
+<h2 class="nav-1">Logged in as <%= @username %></h2>
+<h1> Spaces Available. </h1>
+
+    <% @space.each do |space| %>
+ <div class="item">
+ <form class="list1" action="/booking_preview/<%= space.id%>" method="get" >
+  <span class="space" id="<% space.id %>">
+      <li value="name"> Name:
+  <span>  <%= space.name %> </span>
+  </li>
+  <li> Description:
+  <span> <%= space.description %> </span>
+  </li>
+  <li> Price Per Night (£):
+  <span> <%= space.price_per_night %> </span>
+  </li>
+  <input class="button1" type="submit" value="Book now" name="Book Now" />
+</form>
+</div>
+<% end %>
+
+</body>
+
+<nav class="navMenu">
+      <a href="/spaces">Spaces</a>
+      <a href="/new-space">Add Space</a>
+      <a href="/bookings">Bookings</a>
+      <a href="/contact">Contact</a>
+      <a href="/login">Log Out</a>
+      <div class="dot"></div>
+</nav>
+
+<footer>
+  By Blue Whales
+</footer>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>MakersBNB</title>
+  <link href="<%= src='/styles.css' %>" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Pacifico&family=Satisfy&family=Zen+Kurenaido&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="/images/favicon.ico" />
+</head>
+
+<body class="container">
+
+<img class="logo" src="/images/makersbnb-2.png">
+
+<h2 class="nav-1">Logged in as <%= @username %></h2>
+<h1>Booking Preview.</h1>
+
+<div class="list2">
+<li value="name"> Name:
+  <span> <%= @booking.name %> </span>
+</li>
+<li> Description:
+  <span> <%= @booking.description %> </span>
+</li>
+<li> Price Per Night (£):
+  <span> <%= @booking.price_per_night %> </span>
+</li>
+</div>
+
+<form class="list1" action="/calculate" method="post">
+<li> Number of Nights:
+  <input class="button2" type="text" name="number_of_nights" value="<%= @duration %>" />
+</li>
+  <input class="button2" type="hidden" name="id" value="<%= @booking.id %>" />
+  <input class="button2" type="submit" value="Calculate" />
+</form>
+
+<div class="totalprice">£
+  <%= @duration.to_i * (@booking.price_per_night).to_i %>
+</div>
+
+<form class="list1" action="/booking_confirmation" method="get">
+<li> Stay Date:
+  <input class="button2" type="date" name="From Date" value="From Date" />
+</li>
+  <input class="button2" type="submit" value="Request Booking" />
+</form>
+
+<form action="/spaces" method="get">
+  <input class="button2" type="submit" value="Go Back" />
+</form>
+</body>
+
+<nav class="navMenu">
+      <a href="/spaces">Spaces</a>
+      <a href="/new-space">Add Space</a>
+      <a href="/bookings">Bookings</a>
+      <a href="/contact">Contact</a>
+      <a href="/login">Log Out</a>
+      <div class="dot"></div>
+</nav>
+
+<footer>
+  By Blue Whales
+</footer>

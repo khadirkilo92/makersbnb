@@ -1,0 +1,1 @@
+CREATE TABLE bookings (id SERIAL PRIMARY KEY, username VARCHAR(120), name VARCHAR(240), description VARCHAR(240), price_per_night VARCHAR(60), space_id INT;);
