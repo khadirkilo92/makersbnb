@@ -78,7 +78,7 @@ class MakersBNB < Sinatra::Base
   
   get '/booking_confirmation' do
     DatabaseConnection.query(
-      "INSERT INTO bookings (user, name, description, price_per_night) VALUES ($1,$2,$3,$4);",
+      "INSERT INTO bookings (username, name, description, price_per_night) VALUES ($1,$2,$3,$4);",
       [@username, params[:name], params[:description], params[:price_per_night]]
     )
     erb :booking_confirmation
