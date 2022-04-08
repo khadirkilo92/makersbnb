@@ -78,7 +78,8 @@ class MakersBNB < Sinatra::Base
 
   get '/booking_preview/:id' do
     @username = session["user"]
-    @bookedspace = Space.find(id: params[:id])
+    # @bookedspace = Space.find(id: params[:id])
+    @booking = Booking.create(@username, :id)
     if params["duration"].nil? 
       params["duration"] = 1 
     end
@@ -92,7 +93,18 @@ class MakersBNB < Sinatra::Base
   
   get '/booking_confirmation' do
     @username = session["user"]
+    DatabaseConnection.query(
+      "INSERT INTO bookings (username, name, description, price_per_night) VALUES ($1,$2,$3,$4);",
+      [@username, params[:name], params[:description], params[:price_per_night]]
+    )
     erb :booking_confirmation
+  end
+
+  get '/account' do
+    @bookings = DatabaseConnection.query(
+      "SELECT * FROM bookings (name, description, price_per_night) WHERE username = @username"
+    )
+    erb :account
   end
 
   get '/contact' do

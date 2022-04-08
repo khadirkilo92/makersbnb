@@ -18,13 +18,13 @@
 
 <div class="list2">
 <li value="name"> Name:
-  <span> <%= @bookedspace.name %> </span>
+  <span> <%= @booking.name %> </span>
 </li>
 <li> Description:
-  <span> <%= @bookedspace.description %> </span>
+  <span> <%= @booking.description %> </span>
 </li>
 <li> Price Per Night (£):
-  <span> <%= @bookedspace.price_per_night %> </span>
+  <span> <%= @booking.price_per_night %> </span>
 </li>
 </div>
 
@@ -32,12 +32,12 @@
 <li> Number of Nights:
   <input class="button2" type="text" name="number_of_nights" value="<%= @duration %>" />
 </li>
-  <input class="button2" type="hidden" name="id" value="<%= @bookedspace.id %>" />
+  <input class="button2" type="hidden" name="id" value="<%= @booking.id %>" />
   <input class="button2" type="submit" value="Calculate" />
 </form>
 
 <div class="totalprice">£
-  <%= @duration.to_i * (@bookedspace.price_per_night).to_i %>
+  <%= @duration.to_i * (@booking.price_per_night).to_i %>
 </div>
 
 <form class="list1" action="/booking_confirmation" method="get">
