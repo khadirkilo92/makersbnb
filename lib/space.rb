@@ -2,10 +2,10 @@ class Space
   attr_reader :id, :name, :description, :price_per_night
 
   def initialize(id:, name:, description:, price_per_night:)
-      @id  = id
-      @name = name
-      @description = description
-      @price_per_night = price_per_night
+    @id = id
+    @name = name
+    @description = description
+    @price_per_night = price_per_night
   end
 
   def self.all
@@ -32,5 +32,5 @@ class Space
       "SELECT * FROM spaces WHERE id = $1", [id]
     )
     Space.new(id: result[0]['id'], name: result[0]['name'], description: result[0]['description'], price_per_night: result[0]['price_per_night'])
-  end    
-end 
+  end 
+end

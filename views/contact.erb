@@ -14,19 +14,16 @@
 <img class="logo" src="./images/makersbnb-2.png">
 
 <h2 class="nav-1">Logged in as <%= @username %></h2>
-<h1>Add your Space.</h1>
+<h1>Contact US.</h1>
 
-<form class="list1" action = '/new-space' method = 'post'>
+<form class="list1" action = '/contact_confirmation' method = 'post'>
 <li value="name"> Name:
   <input class="button2" type = 'text' name = 'name'>
 </li>
 <li> Description:
   <input class="button2" type = 'text' name = 'description'>
 </li>
-<li> Price Per Night (£):
-  <input class="button2" type = 'text' name = 'price_per_night'>
-</li>
-<li> Images:
+<li> Attachment:
   <input class="button2" type = 'file' name = 'attachment'>
 </li>
   <input class="button2" type = 'submit' value = 'submit'>

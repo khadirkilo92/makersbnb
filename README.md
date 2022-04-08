@@ -38,6 +38,8 @@ CREATE DATABASE makersbnb;
 
 CREATE TABLE spaces(id SERIAL PRIMARY KEY, name VARCHAR(40), description VARCHAR(240), price_per_night FLOAT4);
 
+CREATE TABLE users (id SERIAL PRIMARY KEY, email VARCHAR(120), password VARCHAR(240));
+
 \q
 
 CREATE DATABASE makersbnb_test;
@@ -45,6 +47,8 @@ CREATE DATABASE makersbnb_test;
 \c makersbnb_test
 
 CREATE TABLE spaces(id SERIAL PRIMARY KEY, name VARCHAR(40), description VARCHAR(240), price_per_night FLOAT4);
+
+CREATE TABLE users (id SERIAL PRIMARY KEY, email VARCHAR(120), password VARCHAR(240));
 
 ```
 

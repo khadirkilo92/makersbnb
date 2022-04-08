@@ -94,5 +94,20 @@ class MakersBNB < Sinatra::Base
     erb :booking_confirmation
   end
 
+  get '/contact' do
+    @username = session["user"]
+    erb :contact
+  end
+
+  get '/contact_confirmation' do
+    @username = session["user"]
+    erb :contact_confirmation
+  end
+
+  post '/contact' do
+    @username = session["user"]
+    redirect '/contact_confirmation'
+  end
+
   run! if app_file == $0
 end
