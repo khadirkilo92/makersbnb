@@ -46,6 +46,15 @@ h1 {
   font-size: 4rem;
 }
 
+.title3 {
+  margin: 30px;
+  font-family: 'Amatic SC', cursive;
+  text-shadow: 5px 0 #182a46;
+  text-align: center;
+  font-size: 2rem;
+  color: #64ffda;
+}
+
 .nav-1 {
   text-align: right;
   color: #fff;
